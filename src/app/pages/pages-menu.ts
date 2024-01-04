@@ -2,6 +2,16 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
+    title: 'Certificates',
+    icon: 'file-text-outline',
+    children: [
+      {
+        title: 'Certificate',
+        link: '/pages/certificates/certificate',
+      },
+    ],
+  },
+  {
     title: 'E-commerce',
     icon: 'shopping-cart-outline',
     link: '/pages/dashboard',

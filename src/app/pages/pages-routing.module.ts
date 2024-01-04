@@ -11,6 +11,11 @@ const routes: Routes = [{
   component: PagesComponent,
   children: [
     {
+      path: 'certificates',
+      loadChildren: () => import('./certificates/certificates.module')
+          .then(m => m.CertificatesModule),
+    },
+    {
       path: 'dashboard',
       component: ECommerceComponent,
     },

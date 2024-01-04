@@ -92,6 +92,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "proxyConfig": "proxy.conf.json",
             "browserTarget": "ngx-admin-demo:build"
           },
           "configurations": {
@@ -187,5 +188,8 @@
     "@angular-eslint/schematics:library": {
       "setParserOptionsProject": true
     }
+  },
+  "cli": {
+    "analytics": "55f86042-c215-47d5-bffb-f3860d984fe9"
   }
 }
