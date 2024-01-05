@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { SmartTableData } from '../../../@core/data/smart-table';
 import { CertificateService } from '../../../@core/service/certificate.service';
-import { DataTable } from '../../../@core/data/base-data';
-import { CertificatePageQuery, CertificateVO } from '../../../@core/data/certificate';
+import { DataTable } from '../../../@core/domain/vo/base-data';
+import { CertificatePageQuery, CertificateVO } from '../../../@core/domain/vo/certificate';
 import { Observable } from 'rxjs';
 import { PositionModel } from '../../maps/search-map/entity/position.model';
 import { FormBuilder } from '@angular/forms';
@@ -61,7 +61,7 @@ export class CertificateComponent implements OnInit {
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private service: CertificateService) {
+  constructor(private service: CertificateService) {                                                                                                                                                              
   }
 
   ngOnInit() {
@@ -72,7 +72,8 @@ export class CertificateComponent implements OnInit {
     };
 
     const dataTable = this.service.fetchData(request);
-    this.source.load(dataTable.body.data);
+  //  console.log(dataTable);
+    this.source.load(null);
   }
 
   onDeleteConfirm(event): void {

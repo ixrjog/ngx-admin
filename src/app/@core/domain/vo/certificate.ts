@@ -1,5 +1,7 @@
 import { DataTable } from './base-data';
-import { PageQuery } from './parsm/query-param';
+import { PageQuery } from '../param/query-param';
+import { Observable } from 'rxjs';
+import { HttpResponse } from '@angular/common/http';
 
 
 export interface CertificateVO {
@@ -23,5 +25,5 @@ export interface CertificatePageQuery extends PageQuery {
 
 export abstract class CertificateData {
     //  abstract fetchData(): any[];
-    abstract fetchData(param: CertificatePageQuery): DataTable<CertificateVO>;
+    abstract fetchData(param: CertificatePageQuery): Observable<HttpResponse<CertificatePageQuery>>;
 }
